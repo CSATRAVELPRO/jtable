@@ -25,7 +25,10 @@
             //Localization
             messages: {
                 editRecord: 'Edit Record'
-            }
+            },
+
+            // Conditions
+            closeEditDialogAfterSaving: false
         },
 
         /************************************************************************
@@ -109,6 +112,9 @@
                 self._setEnabledOfDialogButton($saveButton, false, self.options.messages.saving);
                 self._saveEditForm($editForm, $saveButton);
             }
+
+            if (self.options.closeEditDialogAfterSaving == true)
+                self._$editDiv.dialog('close');
         },
 
         /************************************************************************
